@@ -81,3 +81,14 @@ curso = input("Qual curso você deseja ver os alunos: ")
 cursor.execute("SELECT nome, idade FROM alunos WHERE curso = ?", ("Curso",) )
 for linha in cursor.fetchall():
     print(linha)
+
+
+
+#Deletando dados no banco
+deletar = input("Digite o id do aluno que deseja deletar: ")
+cursor.execute("DELETE FROM alunos WHERE id = ?", ())
+conexao.commit()
+print("Aluno removido!")
+
+#Semore fechar a conexão no final
+conexao.close()
